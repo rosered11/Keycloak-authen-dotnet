@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+    keycloak:
+        image: jboss/keycloak:12.0.4
+        environment:
+            - KEYCLOAK_USER=admin
+            - KEYCLOAK_PASSWORD=P@ssword1
+            - DB_VENDOR=mssql
+            - DB_USER=sa
+            - DB_PASSWORD=P@ssword2
+            - DB_ADDR=172.17.0.2
+            - DB_DATABASE=keycloak
+        ports:
+            - 8080:8080
+        user: root
+        network_mode: bridge
